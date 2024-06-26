@@ -1,0 +1,18 @@
+<div class="container p-3">
+  <div class="row">
+    <!-- Recorremos la lista de libros -->
+    <div *ngFor="let book of books; trackBy: trackByBookId" [routerLink]="['/detalle', book.isbn13]" class="col-12 col-md-6 col-lg-4 mb-3">
+      <div class="card border-primary cursor-pointer">
+        <div class="card-header bg-primary text-white">
+          <h5 class="card-title mb-0">{{ book.title }}</h5>
+          <h6 class="card-subtitle">{{ book.publisher }} - {{ book.year }}</h6>
+        </div>
+        <img *ngIf="book.image" [src]="book.image" class="card-img-top" alt="{{ book.title }}">
+        <div class="card-body">
+          <p class="card-text">{{ book.subtitle }}</p>
+          <p class="card-text">Precio: {{ book.price }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

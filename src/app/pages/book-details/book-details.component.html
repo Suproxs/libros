@@ -1,0 +1,14 @@
+<div class="col-12 col-md-6 col-lg-4 mb-3">
+    <div class="card border-primary">
+      <div class="card-header bg-primary text-white">
+        <h5 class="card-title mb-0">{{ book.Title }}</h5>
+        <h6 class="card-subtitle">{{ book.Publisher }} - {{ book.Year }}</h6>
+      </div>
+      <div class="card-body">
+        <p class="card-text"><strong>ISBN:</strong> {{ book.ISBN }}</p>
+        <p class="card-text"><strong>Pages:</strong> {{ book.Pages }}</p>
+        <p class="card-text"><strong>Notes:</strong> {{ book.Notes.join(', ') }}</p>
+        A<p class="card-text"><strong>Created at:</strong> {{ book.created_at | date:'medium' }}</p>
+        <p class="card-text"><strong>Villains:</strong> {{ book.villains.length }}</p>
+      </div>
+    </div>
